@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC - Lógica de programación</title>
+</head>
+<body>
+    <script>
+        function saltoLinea(){
+            document.write("<br><br>")
+        }
+        function print(text){
+            document.write(text);
+            saltoLinea();
+        }
+        function imc(peso,altura, name){
+            imc = peso/(altura*altura);
+            document.write("El índice de masa corporal de "+name+" es de: "+ imc);
+            saltoLinea()
+            return (imc);
+        }
+
+    indice0 = imc(80, 1.80, "José");
+    indiceL = imc(70, 1.70, "Luis")
+
+    </script>
+</body>
+</html>

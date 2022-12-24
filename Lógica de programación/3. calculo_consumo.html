@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumo</title>
+</head>
+<body>
+    <h3>¿Alcohol o gasolina?</h3>
+    <span>Problema: Si un carro tiene un tanque de <strong>40 litros.</strong> Usando gasolina y consumiendo todo el tanque se hace un recorrido de <strong>480 kilómetros.</strong> ¿Cuál es la eficiencia del carro usando gasolina? o sea, ¿cuántos kilómetros recorre el carro por cada litro de gasolina? Para calcular la eficiencia: divide la distancia recorrida entre la cantidad de litros gastados. Imprime el valor utilizando document.write. Organiza las cuentas en variables.
+    </span>
+    <br><br>
+    <script>
+        var tank = 40;
+        var viaje = 480;
+        var eficiencia = viaje/tank;
+        document.write('La cantidad de litros gastados es de: '+ eficiencia)
+        document.write("<br><br>")
+        document.write('Por otro lado, si el carro usa alcohol como combustible, el mismo tanque de 40 litros hace un recorrido de 300 kilómetros. ¿Cuál es el la eficiencia del carro usando alcohol?')
+        document.write("<br><br>")
+        var viajeAlcohol = 300
+        var eficienciaAlcohol = viajeAlcohol/tank
+        document.write('La eficiencia, usando alcohol es de: '+ eficienciaAlcohol)
+        document.write("<br><br>")
+        document.write('La diferencia de la eficiencia con Gasolina respecto a a la eficiencia del alcohol es de: '+(eficiencia - eficienciaAlcohol))
+        document.write("<br><br>")
+</script>
+</body>
+
+</html>

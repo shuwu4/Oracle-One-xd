@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de programación</title>
+</head>
+<body>
+    <script>
+    document.write("¿Cuántos años de diferencia tienes con tu hermano? Escribe un programa que muestre el mensaje ¨Nuestra diferencia de edad es¨, concatenando el resultado de la diferencia de tu edad con la de tu hermano (o de un amigo). La respuesta puede dar negativa, sin duda. No olvides de usar las funciones saltarLinea e imprimir y de incluir la etiqueta <meta> para resolver problemas de acentuación.")
+    function saltarLinea() {
+        document.write("<br><br>");
+    }
+    function imprimir(texto) {
+        document.write(texto)
+    }
+    var edadMine = 22
+    var edadDiegun = 25
+    saltarLinea()
+    imprimir("La diferencia de mi edad respecto a la otra persona es de: "+ (edadMine-edadDiegun)+" años")
+    </script>
+</body>
+</html>
