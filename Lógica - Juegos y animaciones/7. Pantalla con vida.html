@@ -1,0 +1,62 @@
+<canvas width="600" height="400"></canvas>
+<script> 
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+
+    pincel.fillStyle="grey";
+    pincel.fillRect(0,0,600,400);
+
+    var colores = ["blue","red","green"];
+    var actualColor = 0;
+    
+
+    function escribirAlerta(evento){
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+
+
+        console.log(evento);
+        alert("Usted hizo click en X: '"+x+"', y Y: '"+y+"'");
+    }
+
+    function dibujarCirculo(evento){
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+
+        pincel.fillStyle = colores[actualColor];
+        pincel.beginPath();
+        pincel.arc(x, y, 10, 0, 2*3.14)
+        pincel.fill();
+        console.log(x + "," +y);
+    }
+    //Se deja la función sin el () pq no hay parámetros
+    //pantalla.onclick = escribirAlerta;
+    pantalla.onclick = dibujarCirculo;
+
+    // Solución con solo condicionales:
+    function cambiarColor(){
+        if(actualColor== 0) {
+             actualColor = 1;
+        }
+        else if(actualColor== 1){
+            actualColor = 2;
+        }
+        else{
+            actualColor = 0;
+        }
+        return false;
+    }
+
+    //Solución brindada:
+    //function alterarColor() {
+    //    indiceColorActual++;
+    //    if(indiceColorActual>= colores.length) {
+    //         indiceColorActual = 0; //vuelve para el primer color, blue
+    //    }
+    //    return false; //menú contextual padrón de `canvas` no sea exhibido
+    //}
+    pantalla.oncontextmenu = cambiarColor;
+    
+
+
+</script>

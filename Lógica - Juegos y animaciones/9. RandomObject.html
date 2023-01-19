@@ -1,0 +1,55 @@
+<canvas width="600" height="400"></canvas>
+
+<script> 
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    pincel.fillStyle="lightgrey";
+    pincel.fillRect(0,0,600,400);
+
+    function drawCircle(x,y,radio, color){
+        pincel.fillStyle= color;
+        pincel.beginPath();
+        pincel.arc(x,y,radio,0,2*Math.PI);
+        pincel.fill();
+    }
+    var x = 0
+    var randomX;
+    var randomY;
+    function cls(){ //Limpiar pantalla
+        pincel.clearRect(0,0,600,400);
+    }
+
+    function actualizaPantalla(){
+        cls();
+        randomX = sortearPosicion(600);
+        randomY = sortearPosicion(400);
+        objetivos(randomX,randomY)
+        x++;
+    }
+
+    //setInterval(actualizaPantalla, 5);
+
+    var radio = 10;
+
+    //Función de diseño de objetivos
+    function objetivos(x,y){
+    drawCircle(x,y,radio+20, "red");
+    drawCircle(x,y,radio+10, "white");
+    drawCircle(x,y,radio, "blue");   
+    }
+    function sortearPosicion(maximo){
+        return Math.floor(Math.random()*maximo); //Floor redondea el primer entero, hacia abajo
+    }
+    setInterval(actualizaPantalla, 1000)
+
+    function disparo(evento){
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+        if ((x < randomX + radio)&&(x > randomX-radio)&&(y<randomY+radio)&&(y>randomY-radio)){
+            alert("Tiro certero"); 
+        }
+
+    }
+
+    pantalla.onclick = disparo;
+</script>
